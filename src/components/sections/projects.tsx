@@ -15,36 +15,40 @@ import SmoothScroll from "../smooth-scroll";
 import projects, { Project } from "@/data/projects";
 import { cn } from "@/lib/utils";
 import { SectionHeader } from "./section-header";
+import SlideShow from "../slide-show";
 
 import SectionWrapper from "../ui/section-wrapper";
 
 const ProjectsSection = () => {
   return (
-    <SectionWrapper id="projects" className="max-w-7xl mx-auto md:h-[130vh]">
+    <SectionWrapper id="projects" className="max-w-7xl mx-auto md:h-[130vh] pb-20 md:pb-32">
       <SectionHeader id='projects' title="Projects" />
-      <div className="grid grid-cols-1 md:grid-cols-3">
-        {projects.map((project, index) => (
-          <Modall key={project.src} project={project} />
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-12 items-start">
+        {projects.map((project) => (
+          <Modall key={project.id} project={project} />
         ))}
       </div>
     </SectionWrapper>
   );
 };
 const Modall = ({ project }: { project: Project }) => {
+  const [imgSrc, setImgSrc] = React.useState(project.src);
+  const fallback = "/assets/projects-screenshots/logo-dark.webp";
+
   return (
     <div className="flex items-center justify-center">
       <Modal>
         <ModalTrigger className="bg-transparent flex justify-center group/modal-btn">
-          <div
-            className="relative w-[400px] h-auto rounded-lg overflow-hidden"
-            style={{ aspectRatio: "3/2" }}
-          >
+          <div className="relative w-full max-w-[420px] rounded-lg overflow-hidden aspect-[3/2]">
             <Image
-              className="absolute w-full h-full top-0 left-0 hover:scale-[1.05] transition-all"
-              src={project.src}
+              className="object-cover w-full h-full hover:scale-[1.05] transition-all"
+              src={imgSrc}
               alt={project.title}
-              width={300}
-              height={300}
+              width={600}
+              height={400}
+              onError={() => {
+                if (imgSrc !== fallback) setImgSrc(fallback);
+              }}
             />
             <div className="absolute w-full h-1/2 bottom-0 left-0 bg-gradient-to-t from-black via-black/85 to-transparent pointer-events-none">
               <div className="flex flex-col h-full items-start justify-end p-6">
@@ -103,6 +107,11 @@ const ProjectContents = ({ project }: { project: Project }) => {
           </div>
         )}
       </div>
+      {project.screenshots?.length > 0 && (
+        <div className="mb-6">
+          <SlideShow images={project.screenshots} />
+        </div>
+      )}
       {/* <div className="flex justify-center items-center">
         {project.screenshots.map((image, idx) => (
           <motion.div

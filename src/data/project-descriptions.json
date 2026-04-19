@@ -1,0 +1,8 @@
+{
+  "uniwell": "UniWell is a comprehensive, modern campus healthcare platform engineered for educational institutions. It connects students and medical staff seamlessly to minimize administration overhead and maximize care, featuring secure role-based portals, emergency SOS broadcasting, medical records management, and AI-assisted health inquiries.",
+  "sensai": "**SensAI** is a modern AI-powered career platform that helps you **onboard your profile**, **build a resume**, **generate tailored cover letters**, **practice technical interviews**, and **get weekly industry insights** powered by Gemini.",
+  "splitr": "**Splitr** is a modern expense-sharing web app that lets you split bills with friends, track group expenses, monitor balances, and settle up seamlessly. Never worry about who owes who again.",
+  "jobguard-ai": "**JobGuard AI** is a modern web app that detects fraudulent job postings using Machine Learning. Built with **Flask**, **SQLite**, and a clean responsive UI with an **admin dashboard** and **analytics**.",
+  "linkedin-post-gen": "**LinkedIn Post Gen** is a lightweight AI-powered app that helps you **analyze existing LinkedIn posts**, **extract metadata**, and **generate new posts** in a similar writing style using Groq-hosted LLMs.",
+  "dealdrop": "**DealDrop** is a modern price tracking web app that lets you save product links from e-commerce sites, automatically checks prices on a schedule, stores price history, and emails you when a price drops."
+}
