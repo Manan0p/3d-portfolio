@@ -7,7 +7,6 @@ import { Textarea } from "./ui/ace-textarea";
 import { cn } from "@/lib/utils";
 import { useToast } from "./ui/use-toast";
 import { Button } from "./ui/button";
-import { useRouter } from "next/navigation";
 
 const ContactForm = () => {
   const [fullName, setFullName] = React.useState("");
@@ -16,7 +15,6 @@ const ContactForm = () => {
   const [loading, setLoading] = React.useState(false);
 
   const { toast } = useToast();
-  const router = useRouter();
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -33,42 +31,36 @@ const ContactForm = () => {
     }
     setLoading(true);
     try {
-      const res = await fetch("/api/send", {
+      const response = await fetch("/api/send", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({
-          fullName,
-          email,
-          message,
-        }),
+        body: JSON.stringify({ fullName, email, message }),
       });
-      const data = await res.json().catch(() => ({}));
-      if (!res.ok) {
-        const errMsg = data?.error || data?.resendError || "Server error";
-        throw new Error(typeof errMsg === "string" ? errMsg : JSON.stringify(errMsg));
+
+      const result = await response.json().catch(() => null);
+
+      if (!response.ok) {
+        throw new Error(
+          result?.error || "Unable to send your message right now."
+        );
       }
 
       toast({
         title: "Thank you!",
-        description: "I'll get back to you as soon as possible.",
+        description: "Your message has been sent successfully.",
         variant: "default",
         className: cn("top-0 mx-auto flex fixed md:top-4 md:right-4"),
       });
-      setLoading(false);
       setFullName("");
       setEmail("");
       setMessage("");
-      const timer = setTimeout(() => {
-        router.push("/");
-        clearTimeout(timer);
-      }, 1000);
     } catch (err) {
       const msg = err instanceof Error ? err.message : String(err);
       toast({
         title: "Error",
-        description: msg || "Something went wrong! Please check the fields.",
+        description: msg || "Something went wrong! Please try again.",
         className: cn(
           "top-0 w-full flex justify-center fixed md:max-w-7xl md:top-4 md:right-4"
         ),
