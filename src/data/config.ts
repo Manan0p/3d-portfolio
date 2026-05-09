@@ -25,7 +25,7 @@ const config = {
     "Framer Motion",
   ],
   author: "Manan Lall",
-  email: "workfurmanan@gmail.com",
+  email: "imananop@gmail.com",
   site: "https://personal-portfolio-lac-tau-34.vercel.app/",
 
   // for github stars button

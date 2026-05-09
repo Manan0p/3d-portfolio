@@ -137,7 +137,7 @@ const projects: Project[] = [
       frontend: [PROJECT_SKILLS.ts, PROJECT_SKILLS.next, PROJECT_SKILLS.react],
       backend: [PROJECT_SKILLS.python, PROJECT_SKILLS.postgres],
     },
-    live: "#",
+    live: "https://uniwell-ind.vercel.app/",
     github: "https://github.com/Manan0p/uniwell",
     get content() {
       return (
@@ -164,7 +164,7 @@ const projects: Project[] = [
       frontend: [PROJECT_SKILLS.ts, PROJECT_SKILLS.next, PROJECT_SKILLS.react],
       backend: [PROJECT_SKILLS.python, PROJECT_SKILLS.prisma, PROJECT_SKILLS.postgres, PROJECT_SKILLS.docker],
     },
-    live: "#",
+    live: "https://sensai-lyart.vercel.app/",
     github: "https://github.com/Manan0p/Sensai",
     get content() {
       return (
@@ -191,7 +191,7 @@ const projects: Project[] = [
       frontend: [PROJECT_SKILLS.ts, PROJECT_SKILLS.next, PROJECT_SKILLS.tailwind],
       backend: [PROJECT_SKILLS.node, PROJECT_SKILLS.postgres],
     },
-    live: "#",
+    live: "https://splitr-sigma-eight.vercel.app/",
     github: "https://github.com/Manan0p/Splitr",
     get content() {
       return (
@@ -217,7 +217,7 @@ const projects: Project[] = [
       frontend: [PROJECT_SKILLS.react, PROJECT_SKILLS.ts],
       backend: [PROJECT_SKILLS.python, PROJECT_SKILLS.postgres],
     },
-    live: "#",
+    live: "https://manan0p-jobguard-ai.hf.space/",
     github: "https://github.com/Manan0p/JobGuard-AI",
     get content() {
       return (
@@ -240,7 +240,7 @@ const projects: Project[] = [
       frontend: [PROJECT_SKILLS.ts, PROJECT_SKILLS.react],
       backend: [PROJECT_SKILLS.python],
     },
-    live: "#",
+    live: "https://manan0p-linkedin-post-gen.hf.space/",
     github: "https://github.com/Manan0p/LinkedIn-Post-Gen",
     get content() {
       return (
@@ -264,7 +264,7 @@ const projects: Project[] = [
       frontend: [PROJECT_SKILLS.js, PROJECT_SKILLS.next, PROJECT_SKILLS.tailwind],
       backend: [PROJECT_SKILLS.node, PROJECT_SKILLS.mongo],
     },
-    live: "#",
+    live: "https://dealdrop-one.vercel.app/",
     github: "https://github.com/Manan0p/dealdrop",
     get content() {
       return (
