@@ -26,7 +26,7 @@ const config = {
   ],
   author: "Manan Lall",
   email: "imananop@gmail.com",
-  site: "https://personal-portfolio-lac-tau-34.vercel.app/",
+  site: "https://man-an.me",
 
   // for github stars button
   githubUsername: "Manan0p",
